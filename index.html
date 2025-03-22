@@ -28,6 +28,10 @@
   <header class="header">
     <nav class="nav container">
       <a href="#" class="nav__logo">Maisha</a>
+      <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" id="darkModeToggle">
+      <i class="fas fa-moon"></i> <!-- or sun/moon icon -->
+    </button>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
           <li class="nav__item">
@@ -53,10 +57,12 @@
           </li>
         </ul>
       </div>
+      
       <!-- (Optional) Mobile menu toggle button -->
       <div class="nav__toggle" id="nav-toggle">
         <i class="fas fa-bars"></i>
       </div>
+      
     </nav>
   </header>
 
@@ -119,7 +125,7 @@
             coding club to many impactful projects . I thrive at the intersection of tech and creativity, 
             and I’m always looking to create meaningful digital experiences that make a difference.
           </p>
-          <a href="#" class="button">Download CV</a>
+          <a href="cv.pdf" class="button">Download CV</a>
         </div>
       </div>
     </div>
@@ -418,7 +424,7 @@
         </div>
 
         <!-- Contact Form -->
-        <form action="#" class="contact__form">
+        <form action="https://formspree.io/f/xzzezrea" class="contact__form" method="POST">
           <h3>Have something to say?</h3>
           <input type="text" name="name" placeholder="Insert your name" required />
           <input type="email" name="email" placeholder="Insert your email" required />
