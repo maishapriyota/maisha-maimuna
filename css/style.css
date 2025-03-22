@@ -11,6 +11,9 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+
+
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -28,6 +31,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
 }
+
 img {
   max-width: 100%;
   display: block;
@@ -120,12 +124,48 @@ img {
   cursor: pointer;
 }
 
+/*=== Dark Mode ===*/
+body.dark-mode {
+  background: #292421;  /* or #2b2b2b, a dark grey */
+  color: #ffffff;          /* lighter text */
+}
+
+/* Example: If you have a .profile__container img or #profileImg for your picture */
+.profile__container img {
+  transition: filter 0.3s ease;
+}
+
+/* When in dark mode, apply a darker filter to the picture */
+body.dark-mode .profile__container img {
+  filter: brightness(0.9);
+  /* or something else, e.g. grayscale(0.2) or invert(0.9) 
+     to get a creative effect */
+}
+
+/* The toggle button styling */
+.dark-mode-toggle {
+  background: transparent;
+  border: none;
+  color: #333; /* default icon color */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.dark-mode-toggle:hover {
+  color: #A1674A; /* your accent color */
+}
+/* In dark mode, we might want the toggle button color to invert too */
+body.dark-mode .dark-mode-toggle {
+  color: #ddd;
+}
+
 /*--------------------------------------------------------------
 # Home / Hero
 --------------------------------------------------------------*/
 .home.section .container {
   max-width: 1000px;
   margin: 0 auto;
+  
 }
 .home {
   margin-top: 4rem; /* offset for fixed header */
@@ -242,11 +282,11 @@ img {
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   border-radius: 46% 54% 33% 67% / 37% 34% 66% 63%;
-  border: 3px solid var(--accent-color);
+  border: 10px solid var(--accent-color);
   box-shadow: 0 0 10px var(--accent-color),
               0 0 20px rgba(226, 181, 136, 0.7),
               0 0 40px rgba(226, 181, 136, 0.5);
-  animation: liquidBorder 4s ease-in-out infinite;
+  animation: liquidBorder 12s ease-in-out infinite;
 }
 @keyframes liquidBorder {
   0% {
@@ -270,7 +310,7 @@ img {
 # About
 --------------------------------------------------------------*/
 .about {
-  background-color: var(--bg-color);
+  
   position: relative;
   z-index: 1;
   padding: 4rem 0; 
@@ -869,4 +909,24 @@ img {
 .activities__item h4 {
   margin: 1rem 0;
   color: #A1674A;
+}
+
+/* Optional: refine breakpoints for smaller screens */
+@media (max-width: 768px) {
+  .filter-btn {
+    font-size: 0.8rem;
+  }
+  .activities__mosaic {
+    gap: 1rem; /* less gap on smaller screens */
+  }
+}
+@media (max-width: 480px) {
+  .activities__mosaic {
+    /* single column if you prefer, or keep the auto-fit approach */
+    grid-template-columns: 1fr;
+  }
+  .activities__item {
+    margin: 0 auto; /* center each item horizontally if single column */
+    width: 80%;     /* optional, so they don't stretch entire screen */
+  }
 }
