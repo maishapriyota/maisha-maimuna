@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maisha | Portfolio</title>
+  <!-- Google Font: Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome (for icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Favicon -->
+  <link rel="icon" href="images/portfolio_logo.png" type="image/png" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!--========== HEADER / NAVBAR ==========-->
+  <header class="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Maisha</a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#qualification" class="nav__link">Qualification</a>
+          </li>
+          <li class="nav__item">
+            <a href="#experience" class="nav__link">Experience</a>
+          </li>
+          <li class="nav__item">
+            <a href="#skills" class="nav__link">Skills</a>
+          </li>
+          <li class="nav__item">
+            <a href="#portfolio" class="nav__link">Portfolio</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- (Optional) Mobile menu toggle button -->
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!--========== HOME / HERO SECTION ==========-->
+  <section class="home section" id="home">
+    <div class="home__container container">
+      <!-- Left content -->
+      <div class="home__content">
+        <h1 class="home__title">I am Maisha <span class="wave">👋</span></h1>
+        <h3 class="home__subtitle">BSc Computer Science Engineering Undergrad</h3>
+        <p class="home__description">
+          Fully funded scholarship holder finishing studies in Hungary, 
+          passionate about using AI, software development, web technologies, 
+          and creative design to build impactful solutions. With hands-on experience across 
+          industry, innovation, and sustainability, I bring a multi-talented, purpose-driven approach to every project I take on.
+        </p>
+        <a href="#contact" class="button">Say Hello</a>
+        <div class="scroll__down">
+          <a href="#about">Scroll Down <i class="fas fa-arrow-down"></i></a>
+        </div>
+      </div>
+
+      <!-- Right content (photo with morphing liquid border) -->
+      <div class="home__img">
+        <div class="profile__container">
+          <img src="images/profile.jpeg" alt="Maisha" />
+        </div>
+      </div>
+
+      <!-- Social icons (optional) -->
+      <div class="home__social">
+        <a href="mailto:maimunapriyota676@gmail.com.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/maishamaimuna2" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/maishapriyota" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!--========== ABOUT SECTION ==========-->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2 class="section__title">About Me</h2>
+      <span class="section__subtitle">My Introduction</span>
+      <br><br><br>
+      <div class="about__container">
+        <!-- Left Column: Image (black & white -> color on hover) -->
+        <div class="about__image">
+          <img src="images/about_img.png" alt="About Me" />
+        </div>
+
+        <!-- Right Column: Text -->
+        <div class="about__content">
+          <h3>Blending Code, Creativity & Impact</h3>
+          <p>
+            A Computer Science Engineering student with a passion for blending technology, 
+            creativity, and social impact. I have experience across AI, automation, software development, 
+            and sustainable tech, and I’m equally driven by my interests in web development, 
+            UI/UX design, and creative graphics work. I’ve consistently used my skills to turn ideas into real, 
+            purpose-driven solutions, initiating a sustainable practice within my faculty, organizing developer 
+            coding club to many impactful projects . I thrive at the intersection of tech and creativity, 
+            and I’m always looking to create meaningful digital experiences that make a difference.
+          </p>
+          <a href="#" class="button">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== EDUCATION SECTION ==========-->
+  <section class="education section" id="qualification">
+    <div class="container">
+      <h2 class="section__title">Education</h2>
+      <span class="section__subtitle">My Academic Journey</span>
+
+      <div class="education__content">
+        <!-- 1st education item -->
+        <div class="education__item">
+          <span class="education__rounder"></span>
+          <div class="education__info">
+            <h3 class="education__title">BSc Computer Science Engineering</h3>
+            <span class="education__subtitle">University of Pécs, Hungary</span>
+            <div class="education__calendar">
+              <i class="far fa-calendar"></i> 2021 - Present
+            </div>
+            <span class="education__grade">CGPA: 4.50 / 5.00</span>
+          </div>
+        </div>
+        <!-- 2nd education item -->
+        <div class="education__item">
+          <span class="education__rounder"></span>
+          <div class="education__info">
+            <h3 class="education__title">High School Diploma</h3>
+            <span class="education__subtitle">Viqarunnisa Noon School & College, Bangladesh</span>
+            <div class="education__calendar">
+              <i class="far fa-calendar"></i> 2017 - 2019
+            </div>
+            <span class="education__grade">GPA: 5.0 / 5.0 (A+ in all subjects)</span>
+          </div>
+        </div>
+        <!-- 3rd education item -->
+        <div class="education__item">
+          <span class="education__rounder"></span>
+          <div class="education__info">
+            <h3 class="education__title">Secondary School Certificate</h3>
+            <span class="education__subtitle">Viqarunnisa Noon School & College, Bangladesh</span>
+            <div class="education__calendar">
+              <i class="far fa-calendar"></i> 2007 - 2017
+            </div>
+            <span class="education__grade">GPA: 5.0 / 5.0 (A+ in all subjects)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== EXPERIENCES SECTION ==========-->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <h2 class="section__title">Professional Experiences</h2>
+      <span class="section__subtitle">Internships & Work</span>
+
+      <div class="experience__grid">
+        <!-- 1st experience card -->
+        <div class="experience__card">
+          <div class="experience__icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3 class="experience__title">Trainee - Technical Support Team</h3>
+          <span class="experience__subtitle">
+            <a href="https://graphisoft.com/" target="_blank">Graphisoft</a>
+          </span>
+          <div class="experience__calendar">
+            <i class="far fa-calendar"></i> 2024 - Present
+          </div>
+          <p>
+            At Graphisoft, world's leading BIM software company, spearheaded the integration 
+            of a Knowledge Base to support internal knowledge retention, worked on technical cases.
+          </p>
+        </div>
+        <!-- 2nd experience card -->
+        <div class="experience__card">
+          <div class="experience__icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="experience__title">Junior Web Developer</h3>
+          <span class="experience__subtitle">Harvest Greener</span>
+          <div class="experience__calendar">
+            <i class="far fa-calendar"></i> 2023
+          </div>
+          <p>
+            Helped build the company’s website and full-stack applications for clients, 
+            focusing on performance and user experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== ACTIVITIES / MOSAIC SECTION ==========-->
+ <section class="activities section" id="activities">
+  <div class="container">
+    <h2 class="section__title">Extracurriculars</h2>
+    <span class="section__subtitle">Leadership, Clubs, Organizations & More</span>
+
+    <!-- Filter buttons -->
+    <div class="activities__filters">
+      <button data-filter="all" class="filter-btn active-filter">All</button>
+      <button data-filter="leadership" class="filter-btn">Leadership</button>
+      <button data-filter="organizations" class="filter-btn">Organizations</button>
+      <button data-filter="awards" class="filter-btn">Awards & Recognition</button>
+      <button data-filter="competitions" class="filter-btn">Academic & Competitions</button>
+    </div>
+
+    <!-- Mosaic of items (each item has a category class) -->
+    <div class="activities__mosaic">
+      <div class="activities__item leadership">
+        <img src="images/wl.jpeg" alt="Women Leadership" />
+        <h4>Women Leadership</h4>
+      </div>
+      <!-- Example: Debate Club (belongs to "clubs") -->
+      <div class="activities__item leadership">
+        <img src="images/ewb1.jpeg" alt="Engineers Without Borders UK- Pécs Chapter" />
+        <h4>Engineers Without Borders UK- Pécs Chapter</h4>
+      </div>
+      <!-- Example: Food Drive (belongs to "volunteer") -->
+      <div class="activities__item awards">
+        <img src="images/yewb.jpeg" alt="European Commission Grant Recipient" />
+        <h4>European Commission Grant Recipient</h4>
+      </div>
+      <!-- Example: Basketball (belongs to "sports") -->
+      <div class="activities__item leadership">
+        <img src="images/gdsc.jpg" alt="Google Developer Club Lead" />
+        <h4>Google Developer Club Lead</h4>
+      </div>
+      <div class="activities__item organizations">
+        <img src="images/isa.jpg" alt="International Student Ambassador" />
+        <h4>International Student Ambassador</h4>
+      </div>
+      
+      <div class="activities__item organizations">
+        <img src="images/uta.jpeg" alt="Teaching Assistant/ Student Tutorship" />
+        <h4>Teaching Assistant/ Student Tutorship</h4>
+      </div>
+      <div class="activities__item awards">
+        <img src="images/esa.jpg" alt="European Parliament Visit" />
+        <h4>European Parliament Visits</h4>
+      </div>
+      <div class="activities__item leadership">
+        <img src="images/fa.jpeg" alt="Department Representative" />
+        <h4>Department Representative</h4>
+      </div>
+      <div class="activities__item competitions">
+        <img src="images/hackathon.jpg" alt="Competitions" />
+        <h4>Competitions</h4>
+      </div>
+    </div>
+  </div>
+</section>
+  
+
+  <!--========== SKILLS SECTION ==========-->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <h2 class="section__title">Skills</h2>
+      <span class="section__subtitle">My technical level</span>
+
+      <div class="skills__container">
+        <div class="skills__box">
+          <h3>Programming & Development</h3>
+          <ul>
+            <li>Python, Java, C/C++, JavaScript, PHP</li>
+            <li>React.js, Node.js, Express.js, Bootstrap</li>
+            <li>HTML5, CSS3, SQL, Bash</li>
+          </ul>
+        </div>
+        <div class="skills__box">
+          <h3>Data & Databases</h3>
+          <ul>
+            <li>MySQL, SQL</li>
+            <li>Pandas, NumPy</li>
+            <li>Basic data analysis & visualization</li>
+          </ul>
+        </div>
+        <div class="skills__box">
+          <h3>Design & Creativity</h3>
+          <ul>
+            <li>Figma, Adobe XD, Illustrator, Canva</li>
+            <li>UI/UX Design, Prototyping, Wireframing</li>
+            <li>Logo, Web & Social Media Design</li>
+          </ul>
+        </div>
+        <div class="skills__box">
+          <h3>Tools & Soft Skills</h3>
+          <ul>
+            <li>Git, Agile & Project-based Development</li>
+            <li>Cross-functional Team Collaboration</li>
+            <li>Public Speaking, Leadership, Project Ownership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== PORTFOLIO SECTION ==========-->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <h2 class="section__title">Portfolio</h2>
+      <span class="section__subtitle">Most recent work</span>
+
+      <div class="portfolio__container">
+        <!-- Example Project 1 -->
+        <div class="portfolio__card">
+          <h3>B2B Farming Platform</h3>
+          <!-- Make sure it's clickable: data-modal-target references #modal-eventify -->
+          <button class="portfolio__details" data-modal-target="#modal-eventify">
+            More details &raquo;
+          </button>
+        </div>
+
+        <!-- Example Project 2 -->
+        <div class="portfolio__card">
+          <h3>Expense Tracker</h3>
+          <button class="portfolio__details" data-modal-target="#modal-pingpong">
+            More details &raquo;
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========== MODALS ==========-->
+  <!-- Modal for EventifyUP App -->
+  <div class="modal" id="modal-eventify">
+    <div class="modal__content">
+      <span class="modal__close" data-modal-close>&times;</span>
+      <img
+        src="images/harvest_hub.png"
+        alt="Harvest Hub"
+        class="modal__image"
+      />
+      <h3>Harvest Hub</h3>
+      <p>
+        A quick platform for local hungraian farmers to reduce food waste and monitor supply chain management.
+      </p>
+      <a
+        href="https://maishapriyota.github.io/harvest_hub.github.io/"
+        class="button"
+        target="_blank"
+      >
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- Modal for Ping Pong Game -->
+  <div class="modal" id="modal-pingpong">
+    <div class="modal__content">
+      <span class="modal__close" data-modal-close>&times;</span>
+      <img
+        src="images/expense.jpeg"
+        alt="Expense Tracker"
+        class="modal__image"
+      />
+      <h3>Expense Tracker</h3>
+      <p>
+        An expense tracker application developed using SvelteKit, 
+        a framework for building web applications with Svelte. 
+        The application allows users to track their expenses, 
+        manage their finances, and gain insights into their spending habits.
+      </p>
+      <a
+        href="https://github.com/maishapriyota/webprog2-sveltekit"
+        class="button"
+        target="_blank"
+      >
+        View on GitHub
+      </a>
+    </div>
+  </div>
+
+
+ 
+
+  <!--========== CONTACT SECTION ==========-->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <h2 class="section__title">Get in touch</h2>
+      <span class="section__subtitle">Contact Me</span>
+
+      <div class="contact__container">
+        <!-- Contact Info -->
+        <div class="contact__info">
+          <div>
+            <h3>Talk to me</h3>
+            <p><i class="fas fa-envelope"></i> maimunapriyota676@gmail.com</p>
+            <p><i class="fab fa-linkedin"></i> linkedin.com/in/maishamaimuna2</p>
+            <p><i class="fab fa-github"></i> github.com/maisha</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form action="#" class="contact__form">
+          <h3>Have something to say?</h3>
+          <input type="text" name="name" placeholder="Insert your name" required />
+          <input type="email" name="email" placeholder="Insert your email" required />
+          <input type="text" name="subject" placeholder="Write your subject" />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Write your message"
+            required
+          ></textarea>
+          <button type="submit" class="button">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!--========== FOOTER ==========-->
+  <footer class="footer">
+    <div class="container footer__container">
+      <h3 class="footer__title">Maisha</h3>
+      <ul class="footer__list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+      <div class="footer__social">
+        <a href="https://github.com/maishapriyota" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://linkedin.com/in/maishamaimuna2" target="_blank"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+      </div>
+      <span class="footer__copy">© 2025 All rights reserved</span>
+    </div>
+  </footer>
+
+  <!--========== MAIN JS (optional) ==========-->
+  <script src="js/main.js"></script>
+
+  <!--========== QUALIFICATION TABS SCRIPT ==========-->
+  <script>
+  // Toggle between Education and Experience
+  document.addEventListener("DOMContentLoaded", () => {
+    //===== QUALIFICATION TABS =====
+    const tabs = document.querySelectorAll(".qualification__button");
+    const contents = document.querySelectorAll(".qualification__content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        // Remove active states from all tabs and contents
+        tabs.forEach(t => t.classList.remove("active-qual"));
+        contents.forEach(c => c.classList.remove("qualification__active"));
+
+        // Add active state to the clicked tab
+        tab.classList.add("active-qual");
+        // Show the corresponding content
+        const target = document.querySelector(tab.dataset.target);
+        target.classList.add("qualification__active");
+      });
+    });
+
+    //===== MODAL TRIGGERS =====
+    const detailTriggers = document.querySelectorAll("[data-modal-target]");
+    const modals = document.querySelectorAll(".modal");
+    const closeButtons = document.querySelectorAll("[data-modal-close]");
+
+    //===== OPEN MODAL =====
+    detailTriggers.forEach(trigger => {
+      trigger.addEventListener("click", () => {
+        const modalId = trigger.getAttribute("data-modal-target");
+        const modal = document.querySelector(modalId);
+        if (modal) {
+          modal.classList.add("active");
+        }
+      });
+    });
+
+    //===== CLOSE MODAL (close button) =====
+    closeButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const modal = button.closest(".modal");
+        if (modal) {
+          modal.classList.remove("active");
+        }
+      });
+    });
+
+    //===== CLOSE MODAL (overlay click) =====
+    modals.forEach(modal => {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+    });
+  });
+  </script>
+
+
+ <!--========== FILTER SCRIPT ==========-->
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".activities__item");
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // 1) Remove "active-filter" from all buttons
+        filterButtons.forEach(b => b.classList.remove("active-filter"));
+        // 2) Add "active-filter" to the clicked button
+        btn.classList.add("active-filter");
+
+        // 3) Determine which items to show/hide
+        const filter = btn.getAttribute("data-filter");
+
+        items.forEach(item => {
+          // "all" means show everything
+          // otherwise show only items with matching class
+          if (filter === "all" || item.classList.contains(filter)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
