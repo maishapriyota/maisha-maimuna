@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maisha | Portfolio</title>
+  <title>Maisha | Computer Science Engineer & Valedictorian</title>
+  <meta property="og:title" content="Maisha | Computer Science Engineer & Valedictorian" />
+  <meta property="og:description" content="BSc Computer Science Engineering graduate (CGPA 4.7/5.0) seeking roles in product, IT analysis, IT customer support and web development. Portfolio, projects and experience." />
+  <meta name="description" content="Portfolio of Maisha, a Computer Science Engineering graduate and valedictorian working across AI, web development, UI/UX design and sustainable tech." />
   <!-- Google Font: Poppins -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
   <!-- Font Awesome (for icons) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha512-..."
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
   <!-- Favicon -->
   <link rel="icon" href="images/portfolio_logo.png" type="image/png" />
 
@@ -24,14 +21,12 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <script>try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.body.classList.add("dark-mode")}catch(e){}</script>
   <!--========== HEADER / NAVBAR ==========-->
   <header class="header">
     <nav class="nav container">
       <a href="#" class="nav__logo">Maisha</a>
-      <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" id="darkModeToggle">
-      <i class="fas fa-moon"></i> <!-- or sun/moon icon -->
-    </button>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
           <li class="nav__item">
@@ -41,7 +36,7 @@
             <a href="#about" class="nav__link">About</a>
           </li>
           <li class="nav__item">
-            <a href="#qualification" class="nav__link">Qualification</a>
+            <a href="#qualification" class="nav__link">Education</a>
           </li>
           <li class="nav__item">
             <a href="#experience" class="nav__link">Experience</a>
@@ -58,10 +53,8 @@
         </ul>
       </div>
       
-      <!-- (Optional) Mobile menu toggle button -->
-      <div class="nav__toggle" id="nav-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
+      <button type="button" class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false"><i class="fas fa-moon"></i></button>
+      <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-controls="nav-menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
       
     </nav>
   </header>
@@ -72,14 +65,16 @@
       <!-- Left content -->
       <div class="home__content">
         <h1 class="home__title">I am Maisha <span class="wave">👋</span></h1>
-        <h3 class="home__subtitle">BSc Computer Science Engineering Undergrad</h3>
+        <h3 class="home__subtitle">BSc Computer Science Engineering Graduate</h3>
         <p class="home__description">
-          Fully funded scholarship holder finishing studies in Hungary, 
-          passionate about using AI, software development, web technologies, 
-          and creative design to build impactful solutions. With hands-on experience across 
-          industry, innovation, and sustainability, I bring a multi-talented, purpose-driven approach to every project I take on.
+          Valedictorian and Stipendium Hungaricum scholar. I build AI, web and sustainable-tech
+          solutions, with hands-on experience across industry, research and sustainability leadership.
         </p>
-        <a href="#contact" class="button">Say Hello</a>
+        <div class="home__cta">
+          <a href="#portfolio" class="button">View Projects</a>
+          <a href="#contact" class="button button--ghost">Say Hello</a>
+        </div>
+        <p class="home__open"><span class="home__dot" aria-hidden="true"></span> Open to Product, IT Analyst, IT Support &amp; Web Developer roles</p>
         <div class="scroll__down">
           <a href="#about">Scroll Down <i class="fas fa-arrow-down"></i></a>
         </div>
@@ -94,9 +89,9 @@
 
       <!-- Social icons (optional) -->
       <div class="home__social">
-        <a href="mailto:maimunapriyota676@gmail.com.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/maishamaimuna2" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/maishapriyota" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:maimunapriyota676@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/maishamaimuna2" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/maishapriyota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </section>
@@ -106,26 +101,27 @@
     <div class="container">
       <h2 class="section__title">About Me</h2>
       <span class="section__subtitle">My Introduction</span>
-      <br><br><br>
       <div class="about__container">
         <!-- Left Column: Image (black & white -> color on hover) -->
         <div class="about__image">
-          <img src="images/about_img.png" alt="About Me" />
+          <img loading="lazy" src="images/about_img.png" alt="About Me" />
         </div>
 
         <!-- Right Column: Text -->
         <div class="about__content">
-          <h3>Blending Code, Creativity & Impact</h3>
+          <h3>Technology With a Purpose</h3>
           <p>
-            A Computer Science Engineering student with a passion for blending technology, 
-            creativity, and social impact. I have experience across AI, automation, software development, 
-            and sustainable tech, and I’m equally driven by my interests in web development, 
-            UI/UX design, and creative graphics work. I’ve consistently used my skills to turn ideas into real, 
-            purpose-driven solutions, initiating a sustainable practice within my faculty, organizing developer 
-            coding club to many impactful projects . I thrive at the intersection of tech and creativity, 
-            and I’m always looking to create meaningful digital experiences that make a difference.
+            I’m a Computer Science Engineering graduate from the University of Pécs in Hungary. I studied
+            there as a Stipendium Hungaricum scholar and finished with a CGPA of 4.7 / 5.0 (top 1% of my class), an Excellent (5) grade, and the
+            Student Excellence Award, which went to only one student in my batch. I also had the honor of speaking
+            as valedictorian.
           </p>
-          <a href="cv.pdf" class="button">Download CV</a>
+          <p>
+            My work spans AI, automation, web development and UI/UX design, and I care most when it solves a real
+            problem. I led a €10,000 European Commission-funded circular economy makerspace at my university, organized a developer coding club, and built full-stack applications for clients. At Graphisoft I started as a customer support operations trainee, was promoted to senior intern, and built the company’s first internal knowledge base before finishing my internship in October 2025. I’m drawn to the place where technology and creativity meet,
+            and I want to build digital experiences that make a difference.
+          </p>
+          <a href="cv.pdf" class="button" download>Download CV</a>
         </div>
       </div>
     </div>
@@ -139,15 +135,23 @@
 
       <div class="education__content">
         <!-- 1st education item -->
-        <div class="education__item">
+        <div class="education__item education__item--featured">
           <span class="education__rounder"></span>
           <div class="education__info">
-            <h3 class="education__title">BSc Computer Science Engineering</h3>
+            <span class="education__badge"><i class="fas fa-graduation-cap"></i> Graduated</span>
+            <h3 class="education__title">BSc Computer Science Engineering (Honours)</h3>
             <span class="education__subtitle">University of Pécs, Hungary</span>
             <div class="education__calendar">
-              <i class="far fa-calendar"></i> 2021 - Present
+              <i class="far fa-calendar"></i> Sep 2021 - Jun 2025
             </div>
-            <span class="education__grade">CGPA: 4.50 / 5.00</span>
+            <span class="education__grade education__grade--top">CGPA: 4.70 / 5.00 · Excellent (5)</span>
+            <ul class="education__honors">
+              <li><i class="fas fa-award"></i> Only recipient of the Student Excellence Award from the batch</li>
+              <li><i class="fas fa-microphone"></i> Valedictorian speaker</li>
+              <li><i class="fas fa-trophy"></i> Top 1% of the graduating class</li>
+              <li><i class="fas fa-globe"></i> Stipendium Hungaricum Scholar</li>
+              <li><i class="fas fa-book"></i> 248 / 210 ECTS credits</li>
+            </ul>
           </div>
         </div>
         <!-- 2nd education item -->
@@ -159,7 +163,11 @@
             <div class="education__calendar">
               <i class="far fa-calendar"></i> 2017 - 2019
             </div>
-            <span class="education__grade">GPA: 5.0 / 5.0 (A+ in all subjects)</span>
+            <span class="education__grade">GPA: 5.0 / 5.0 (A+ in all subjects) · 90% marks</span>
+            <ul class="education__honors">
+              <li><i class="fas fa-crown"></i> Chosen as one of the Head Girls for outstanding work and study performance</li>
+              <li><i class="fas fa-robot"></i> Runner-Up, National Robotics Olympiad, Bangladesh</li>
+            </ul>
           </div>
         </div>
         <!-- 3rd education item -->
@@ -171,7 +179,7 @@
             <div class="education__calendar">
               <i class="far fa-calendar"></i> 2007 - 2017
             </div>
-            <span class="education__grade">GPA: 5.0 / 5.0 (A+ in all subjects)</span>
+            <span class="education__grade">GPA: 5.0 / 5.0 (A+ in all subjects) · 94% marks</span>
           </div>
         </div>
       </div>
@@ -182,25 +190,78 @@
   <section class="experience section" id="experience">
     <div class="container">
       <h2 class="section__title">Professional Experiences</h2>
-      <span class="section__subtitle">Internships & Work</span>
+      <span class="section__subtitle">Internships, Leadership & Research</span>
 
       <div class="experience__grid">
-        <!-- 1st experience card -->
-        <div class="experience__card">
+        <!-- 1st experience card: Graphisoft -->
+        <div class="experience__card experience__card--wide">
           <div class="experience__icon">
-            <i class="fas fa-robot"></i>
+            <i class="fas fa-headset"></i>
           </div>
-          <h3 class="experience__title">Trainee - Technical Support Team</h3>
           <span class="experience__subtitle">
-            <a href="https://graphisoft.com/" target="_blank">Graphisoft</a>
+            <a href="https://graphisoft.com/" target="_blank" rel="noopener noreferrer">Graphisoft</a>
+            · Budapest, Hungary · Internship completed October 2025
           </span>
-          <div class="experience__calendar">
-            <i class="far fa-calendar"></i> 2024 - Present
+
+          <div class="experience__roles">
+            <div class="experience__role">
+              <h3 class="experience__title">Senior Intern, Knowledge Management <span class="experience__tag">Promoted</span></h3>
+              <div class="experience__calendar"><i class="far fa-calendar"></i> February 2025 - October 2025</div>
+              <p><strong>Company-First Initiative</strong></p>
+              <ul class="experience__list">
+                <li>Initiated and built Graphisoft’s first-ever internal knowledge base from scratch, to retain knowledge and document global expertise.</li>
+                <li>Set documentation standards (structure, tone, versioning, discoverability) with reusable templates, and consolidated fragmented legacy content into one single source of truth.</li>
+                <li>Interviewed stakeholders from the Chief Customer Officer to trainees and customers, and documented workflows from Tier 1 support to Tier 2 escalation to developers.</li>
+                <li>Maintained everything in Confluence, and built internal performance-tracking applications for data-driven decisions.</li>
+              </ul>
+              <p class="experience__impact"><strong>Impact:</strong> Adopted company-wide, significantly improving cross-office information flow and operational efficiency.</p>
+              <ul class="experience__tools"><li>Confluence</li><li>Documentation</li><li>Stakeholder interviews</li></ul>
+            </div>
+
+            <div class="experience__role">
+              <h3 class="experience__title">Customer Support Operations Trainee</h3>
+              <div class="experience__calendar"><i class="far fa-calendar"></i> August 2024 - January 2025</div>
+              <ul class="experience__list">
+                <li>Resolved 500+ customer inquiries via Zendesk and managed Jira tickets with engineering teams.</li>
+                <li>Analyzed user feedback and drove 10+ product improvements.</li>
+                <li>Facilitated global support alignment using Miro, coordinating senior engineers across international offices.</li>
+              </ul>
+              <ul class="experience__tools"><li>Zendesk</li><li>Jira</li><li>Miro</li></ul>
+            </div>
           </div>
-          <p>
-            At Graphisoft, world's leading BIM software company, spearheaded the integration 
-            of a Knowledge Base to support internal knowledge retention, worked on technical cases.
-          </p>
+        </div>
+        <!-- Project lead: makerspace -->
+        <div class="experience__card experience__card--wide">
+          <div class="experience__icon"><i class="fas fa-recycle"></i></div>
+          <span class="experience__subtitle">Engineers Without Borders, University of Pécs · European Commission Grant, €10,000</span>
+          <div class="experience__roles">
+            <div class="experience__role">
+              <h3 class="experience__title">Project Lead, Circular Economy Makerspace</h3>
+              <div class="experience__calendar"><i class="far fa-calendar"></i> April 2023 - May 2024</div>
+              <ul class="experience__list">
+                <li>Secured and managed a €10,000 EU grant, a highly competitive funding opportunity, to establish a university-wide sustainability makerspace equipped with 3D printers, Arduino kits, and repair tools.</li>
+                <li>Led a multidisciplinary team through the full project lifecycle: proposal writing, budgeting, procurement, implementation, and stakeholder reporting.</li>
+                <li>Drove campus-wide eco-initiatives including new recycling systems and bicycle infrastructure, and organized “Sustainable Week” to promote reuse and recycling.</li>
+                <li>Represented the project to policymakers at the European Commission in Brussels; coverage included a podcast feature and a local newspaper article.</li>
+              </ul>
+              <ul class="experience__tools"><li>Grant writing</li><li>Budgeting</li><li>Team leadership</li><li>Stakeholder reporting</li></ul>
+            </div>
+          </div>
+        </div>
+        <!-- Teaching assistant -->
+        <div class="experience__card">
+          <div class="experience__icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3 class="experience__title">Undergraduate Teaching Assistant</h3>
+          <span class="experience__subtitle">University of Pécs</span>
+          <div class="experience__calendar"><i class="far fa-calendar"></i> Sep 2022 - Dec 2024</div>
+          <p>Selected to deliver tutorials for 100+ students in core engineering subjects (Physics, System Theory).</p>
+        </div>
+        <!-- Research assistant -->
+        <div class="experience__card">
+          <div class="experience__icon"><i class="fas fa-flask"></i></div>
+          <h3 class="experience__title">Research Assistant</h3>
+          <span class="experience__subtitle">Bio-Impedance Research Group & independent optimization research</span>
+          <p>Applied data science and machine learning (Python) to clinical liver cirrhosis data, and independently developed a Bayesian Network–MILP–Genetic Algorithm framework for optimization under uncertainty.</p>
         </div>
         <!-- 2nd experience card -->
         <div class="experience__card">
@@ -229,54 +290,68 @@
 
     <!-- Filter buttons -->
     <div class="activities__filters">
-      <button data-filter="all" class="filter-btn active-filter">All</button>
-      <button data-filter="leadership" class="filter-btn">Leadership</button>
-      <button data-filter="organizations" class="filter-btn">Organizations</button>
-      <button data-filter="awards" class="filter-btn">Awards & Recognition</button>
-      <button data-filter="competitions" class="filter-btn">Academic & Competitions</button>
+      <button type="button" data-filter="all" class="filter-btn active-filter">All</button>
+      <button type="button" data-filter="leadership" class="filter-btn">Leadership</button>
+      <button type="button" data-filter="organizations" class="filter-btn">Organizations</button>
+      <button type="button" data-filter="awards" class="filter-btn">Awards & Recognition</button>
+      <button type="button" data-filter="competitions" class="filter-btn">Academic & Competitions</button>
     </div>
 
     <!-- Mosaic of items (each item has a category class) -->
     <div class="activities__mosaic">
+      <div class="activities__item awards activities__item--featured">
+        <span class="activities__ribbon"><i class="fas fa-star"></i> Highlight</span>
+        <div class="activities__media">
+          <img loading="lazy" src="images/valedictorian.jpg" alt="Maisha delivering the valedictorian speech" onerror="this.remove()" />
+        </div>
+        <h4>Valedictorian Speaker</h4>
+        <p>Graduated with a CGPA of 4.7 / 5.0 (Excellent) and was the only recipient of the Student Excellence Award from the batch.</p>
+      </div>
       <div class="activities__item leadership">
-        <img src="images/wl.jpeg" alt="Women Leadership" />
+        <img loading="lazy" src="images/wl.jpeg" alt="Women Leadership" />
         <h4>Women Leadership</h4>
+        <p>Supporting and championing women in tech and engineering.</p>
       </div>
-      <!-- Example: Debate Club (belongs to "clubs") -->
       <div class="activities__item leadership">
-        <img src="images/ewb1.jpeg" alt="Engineers Without Borders UK- Pécs Chapter" />
+        <img loading="lazy" src="images/ewb1.jpeg" alt="Engineers Without Borders UK- Pécs Chapter" />
         <h4>Engineers Without Borders UK- Pécs Chapter</h4>
+        <p>Led the Circular Economy Makerspace project as Project Lead.</p>
       </div>
-      <!-- Example: Food Drive (belongs to "volunteer") -->
       <div class="activities__item awards">
-        <img src="images/yewb.jpeg" alt="European Commission Grant Recipient" />
+        <img loading="lazy" src="images/yewb.jpeg" alt="European Commission Grant Recipient" />
         <h4>European Commission Grant Recipient</h4>
+        <p>Secured a €10,000 EU grant for a university-wide sustainability makerspace.</p>
       </div>
-      <!-- Example: Basketball (belongs to "sports") -->
       <div class="activities__item leadership">
-        <img src="images/gdsc.jpg" alt="Google Developer Club Lead" />
+        <img loading="lazy" src="images/gdsc.jpg" alt="Google Developer Club Lead" />
         <h4>Google Developer Club Lead</h4>
+        <p>Led a developer coding club for fellow students.</p>
       </div>
       <div class="activities__item organizations">
-        <img src="images/isa.jpg" alt="International Student Ambassador" />
+        <img loading="lazy" src="images/isa.jpg" alt="International Student Ambassador" />
         <h4>International Student Ambassador</h4>
+        <p>Representing the university to prospective and fellow international students.</p>
       </div>
       
       <div class="activities__item organizations">
-        <img src="images/uta.jpeg" alt="Teaching Assistant/ Student Tutorship" />
+        <img loading="lazy" src="images/uta.jpeg" alt="Teaching Assistant/ Student Tutorship" />
         <h4>Teaching Assistant/ Student Tutorship</h4>
+        <p>Delivered tutorials to 100+ students in Physics and System Theory.</p>
       </div>
       <div class="activities__item awards">
-        <img src="images/esa.jpg" alt="European Parliament Visit" />
+        <img loading="lazy" src="images/esa.jpg" alt="European Parliament Visit" />
         <h4>European Parliament Visits</h4>
+        <p>Engaged with policymakers during visits to the European institutions in Brussels.</p>
       </div>
       <div class="activities__item leadership">
-        <img src="images/fa.jpeg" alt="Department Representative" />
+        <img loading="lazy" src="images/fa.jpeg" alt="Department Representative" />
         <h4>Department Representative</h4>
+        <p>Spoke for fellow students and their needs within the department.</p>
       </div>
       <div class="activities__item competitions">
-        <img src="images/hackathon.jpg" alt="Competitions" />
+        <img loading="lazy" src="images/hackathon.jpg" alt="Competitions" />
         <h4>Competitions</h4>
+        <p>Hackathons and competitions, including Runner-Up at the National Robotics Olympiad.</p>
       </div>
     </div>
   </div>
@@ -287,14 +362,14 @@
   <section class="skills section" id="skills">
     <div class="container">
       <h2 class="section__title">Skills</h2>
-      <span class="section__subtitle">My technical level</span>
+      <span class="section__subtitle">Technical & professional skills</span>
 
       <div class="skills__container">
         <div class="skills__box">
           <h3>Programming & Development</h3>
           <ul>
             <li>Python, Java, C/C++, JavaScript, PHP</li>
-            <li>React.js, Node.js, Express.js, Bootstrap</li>
+            <li>React.js, React Native, Node.js, Express.js, REST APIs, Bootstrap</li>
             <li>HTML5, CSS3, SQL, Bash</li>
           </ul>
         </div>
@@ -303,23 +378,39 @@
           <ul>
             <li>MySQL, SQL</li>
             <li>Pandas, NumPy</li>
-            <li>Basic data analysis & visualization</li>
+            <li>Data analysis, visualization & applied machine learning</li>
           </ul>
         </div>
         <div class="skills__box">
           <h3>Design & Creativity</h3>
           <ul>
             <li>Figma, Adobe XD, Illustrator, Canva</li>
-            <li>UI/UX Design, Prototyping, Wireframing</li>
+            <li>UI/UX Design, Design Thinking, Prototyping, Wireframing</li>
             <li>Logo, Web & Social Media Design</li>
           </ul>
         </div>
         <div class="skills__box">
           <h3>Tools & Soft Skills</h3>
           <ul>
-            <li>Git, Agile & Project-based Development</li>
+            <li>Git, Jira, Agile & Project-based Development</li>
             <li>Cross-functional Team Collaboration</li>
             <li>Public Speaking, Leadership, Project Ownership</li>
+          </ul>
+        </div>
+        <div class="skills__box">
+          <h3>Sustainability & Project Management</h3>
+          <ul>
+            <li>Grant writing & management</li>
+            <li>Stakeholder engagement</li>
+            <li>Cross-functional team leadership, Agile</li>
+          </ul>
+        </div>
+        <div class="skills__box">
+          <h3>Languages</h3>
+          <ul>
+            <li>Bengali (native)</li>
+            <li>English: near-native (IELTS 8.0, C2 Reading & Spoken Production)</li>
+            <li>Hungarian (A2), French (A2)</li>
           </ul>
         </div>
       </div>
@@ -330,59 +421,97 @@
   <section class="portfolio section" id="portfolio">
     <div class="container">
       <h2 class="section__title">Portfolio</h2>
-      <span class="section__subtitle">Most recent work</span>
+      <span class="section__subtitle">Selected projects</span>
 
       <div class="portfolio__container">
-        <!-- Example Project 1 -->
-        <div class="portfolio__card">
-          <h3>B2B Farming Platform</h3>
-          <!-- Make sure it's clickable: data-modal-target references #modal-eventify -->
-          <button class="portfolio__details" data-modal-target="#modal-eventify">
-            More details &raquo;
-          </button>
-        </div>
+        <article class="portfolio__card case">
+          <img class="case__cover" loading="lazy" src="images/ecogo-app.jpg" alt="EcoGo mobile app screens: home, scan, milestones and impact" />
+          <span class="case__num">01</span>
+          <span class="case__tag">BSc thesis · Sustainability</span>
+          <h3>EcoGo</h3>
+          <p class="case__lead">Scan a product, see its CO₂ footprint, and track your impact over time.</p>
+          <dl class="case__facts"><div><dt>Built</dt><dd>React Native mobile app and React.js web dashboard on Supabase (PostgreSQL, REST APIs, JWT auth), with an MCDA algorithm scoring products on environmental impact.</dd></div><div><dt>Result</dt><dd>4.6 / 5 user satisfaction in real-world validation testing.</dd></div></dl>
+          <ul class="experience__tools"><li>React Native (Expo)</li><li>React.js</li><li>Supabase</li><li>PostgreSQL</li></ul>
+          <button type="button" class="portfolio__details" data-modal-target="#modal-ecogo">More details &raquo;</button>
+        </article>
+        <article class="portfolio__card case">
+          <img class="case__cover" loading="lazy" src="images/admin-assistant.png" alt="Admin-Assistant platform screenshot" />
+          <span class="case__num">02</span>
+          <span class="case__tag">LLM · Web Platform</span>
+          <h3>Admin Assistant</h3>
+          <p class="case__lead">Built to explore how language models can be used responsibly in public administration.</p>
+          <dl class="case__facts"><div><dt>Built</dt><dd>A small retrieval-augmented question-answering app, where data protection and trustworthy answers matter more than fluent ones.
 
-        <!-- Example Project 2 -->
-        <div class="portfolio__card">
+Resources
+</dd></div><div><dt>Result</dt><dd>Live and running as a working site.</dd></div></dl>
+          <ul class="experience__tools"><li>LLM</li><li>RAG</li><li>Privacy</li></ul>
+          <button type="button" class="portfolio__details" data-modal-target="#modal-harvest">More details &raquo;</button>
+        </article>
+        <article class="portfolio__card case">
+          <img class="case__cover" loading="lazy" src="images/expense.jpeg" alt="Expense Tracker app screenshot" />
+          <span class="case__num">03</span>
+          <span class="case__tag">Web app · Personal finance</span>
           <h3>Expense Tracker</h3>
-          <button class="portfolio__details" data-modal-target="#modal-pingpong">
-            More details &raquo;
-          </button>
-        </div>
+          <p class="case__lead">An app to track spending and understand your money habits.</p>
+          <dl class="case__facts"><div><dt>Built</dt><dd>SvelteKit application for logging expenses, managing finances and spotting spending patterns.</dd></div><div><dt>Code</dt><dd>Open source on GitHub.</dd></div></dl>
+          <ul class="experience__tools"><li>SvelteKit</li><li>Svelte</li></ul>
+          <button type="button" class="portfolio__details" data-modal-target="#modal-expense">More details &raquo;</button>
+        </article>
       </div>
     </div>
   </section>
 
   <!--========== MODALS ==========-->
-  <!-- Modal for EventifyUP App -->
-  <div class="modal" id="modal-eventify">
+  <!-- Modal: EcoGo -->
+  <div class="modal" id="modal-ecogo" role="dialog" aria-modal="true" aria-label="EcoGo details">
     <div class="modal__content">
-      <span class="modal__close" data-modal-close>&times;</span>
-      <img
-        src="images/harvest_hub.png"
-        alt="Harvest Hub"
+      <button type="button" class="modal__close" data-modal-close aria-label="Close">&times;</button>
+      <h3>EcoGo: Sustainable Consumption Platform</h3>
+      <img loading="lazy" src="images/ecogo-app.jpg" alt="EcoGo mobile app" class="modal__image" />
+      <img loading="lazy" src="images/ecogo-web.jpg" alt="EcoGo web dashboard" class="modal__image" />
+      <p>
+        My BSc thesis at the University of Pécs. EcoGo makes sustainability visible: you scan a product,
+        see its CO₂ footprint and eco-score, and add it to an impact log that tracks your choices over time.
+        A multi-criteria decision analysis (MCDA) algorithm scores products on environmental impact.
+      </p>
+      <p><strong>Three pillars:</strong> barcode scanning for real-time eco-scores, a personal impact
+        dashboard (CO₂ and plastic savings), and gamified challenges with milestones and badges.</p>
+      <p><strong>Stack:</strong> React Native (Expo) mobile app, React.js web dashboard with an admin panel,
+        and Supabase (PostgreSQL, REST APIs, JWT authentication with role-based access).</p>
+      <p><strong>Result:</strong> 4.6 / 5 user satisfaction in real-world validation testing.</p>
+      <p><strong>Next:</strong> ML-personalized scoring, blockchain-verified eco-data, a sustainable
+        product marketplace and team challenges.</p>
+    </div>
+  </div>
+
+  <!-- Modal: Harvest Hub -->
+  <div class="modal" id="modal-harvest" role="dialog" aria-modal="true" aria-label="Harvest Hub details">
+    <div class="modal__content">
+      <button type="button" class="modal__close" data-modal-close aria-label="Close">&times;</button>
+      <img loading="lazy" src="images/admin-assistant.png"
+        alt="Admin-Assistant"
         class="modal__image"
       />
-      <h3>Harvest Hub</h3>
+      <h3>Admin-Assistant</h3>
       <p>
-        A quick platform for local hungraian farmers to reduce food waste and monitor supply chain management.
+        A small retrieval-augmented question-answering app, built to explore how language models can be used responsibly in 
+        public administration, where data protection and trustworthy answers matter more than fluent ones.
       </p>
       <a
-        href="https://maishapriyota.github.io/harvest_hub.github.io/"
+        href="https://maishapriyota.github.io/Admin-Assistant/"
         class="button"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
-        View on GitHub
+        View Live Site
       </a>
     </div>
   </div>
 
-  <!-- Modal for Ping Pong Game -->
-  <div class="modal" id="modal-pingpong">
+  <!-- Modal: Expense Tracker -->
+  <div class="modal" id="modal-expense" role="dialog" aria-modal="true" aria-label="Expense Tracker details">
     <div class="modal__content">
-      <span class="modal__close" data-modal-close>&times;</span>
-      <img
-        src="images/expense.jpeg"
+      <button type="button" class="modal__close" data-modal-close aria-label="Close">&times;</button>
+      <img loading="lazy" src="images/expense.jpeg"
         alt="Expense Tracker"
         class="modal__image"
       />
@@ -396,7 +525,7 @@
       <a
         href="https://github.com/maishapriyota/webprog2-sveltekit"
         class="button"
-        target="_blank"
+        target="_blank" rel="noopener noreferrer"
       >
         View on GitHub
       </a>
@@ -417,25 +546,26 @@
         <div class="contact__info">
           <div>
             <h3>Talk to me</h3>
-            <p><i class="fas fa-envelope"></i> maimunapriyota676@gmail.com</p>
-            <p><i class="fab fa-linkedin"></i> linkedin.com/in/maishamaimuna2</p>
-            <p><i class="fab fa-github"></i> github.com/maisha</p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:maimunapriyota676@gmail.com">maimunapriyota676@gmail.com</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/maishamaimuna2" target="_blank" rel="noopener noreferrer">linkedin.com/in/maishamaimuna2</a></p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/maishapriyota" target="_blank" rel="noopener noreferrer">github.com/maishapriyota</a></p>
           </div>
         </div>
 
         <!-- Contact Form -->
-        <form action="https://formspree.io/f/xzzezrea" class="contact__form" method="POST">
+        <form action="https://formspree.io/f/xzzezrea" class="contact__form" method="POST" id="contact-form">
           <h3>Have something to say?</h3>
-          <input type="text" name="name" placeholder="Insert your name" required />
-          <input type="email" name="email" placeholder="Insert your email" required />
-          <input type="text" name="subject" placeholder="Write your subject" />
+          <input type="text" name="name" aria-label="Name" placeholder="Insert your name" required />
+          <input type="email" name="email" aria-label="Email" placeholder="Insert your email" required />
+          <input type="text" name="subject" aria-label="Subject" placeholder="Write your subject" />
           <textarea
-            name="message"
+            name="message" aria-label="Message"
             rows="5"
             placeholder="Write your message"
             required
           ></textarea>
           <button type="submit" class="button">Send Message</button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -451,109 +581,17 @@
         <li><a href="#skills">Skills</a></li>
       </ul>
       <div class="footer__social">
-        <a href="https://github.com/maishapriyota" target="_blank"
+        <a href="https://github.com/maishapriyota" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
           ><i class="fab fa-github"></i
         ></a>
-        <a href="https://linkedin.com/in/maishamaimuna2" target="_blank"
+        <a href="https://linkedin.com/in/maishamaimuna2" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
           ><i class="fab fa-linkedin-in"></i
         ></a>
       </div>
-      <span class="footer__copy">© 2025 All rights reserved</span>
+      <span class="footer__copy">© <span id="year">2026</span> All rights reserved</span>
     </div>
   </footer>
 
-  <!--========== MAIN JS (optional) ==========-->
-  <script src="js/main.js"></script>
-
-  <!--========== QUALIFICATION TABS SCRIPT ==========-->
-  <script>
-  // Toggle between Education and Experience
-  document.addEventListener("DOMContentLoaded", () => {
-    //===== QUALIFICATION TABS =====
-    const tabs = document.querySelectorAll(".qualification__button");
-    const contents = document.querySelectorAll(".qualification__content");
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        // Remove active states from all tabs and contents
-        tabs.forEach(t => t.classList.remove("active-qual"));
-        contents.forEach(c => c.classList.remove("qualification__active"));
-
-        // Add active state to the clicked tab
-        tab.classList.add("active-qual");
-        // Show the corresponding content
-        const target = document.querySelector(tab.dataset.target);
-        target.classList.add("qualification__active");
-      });
-    });
-
-    //===== MODAL TRIGGERS =====
-    const detailTriggers = document.querySelectorAll("[data-modal-target]");
-    const modals = document.querySelectorAll(".modal");
-    const closeButtons = document.querySelectorAll("[data-modal-close]");
-
-    //===== OPEN MODAL =====
-    detailTriggers.forEach(trigger => {
-      trigger.addEventListener("click", () => {
-        const modalId = trigger.getAttribute("data-modal-target");
-        const modal = document.querySelector(modalId);
-        if (modal) {
-          modal.classList.add("active");
-        }
-      });
-    });
-
-    //===== CLOSE MODAL (close button) =====
-    closeButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        const modal = button.closest(".modal");
-        if (modal) {
-          modal.classList.remove("active");
-        }
-      });
-    });
-
-    //===== CLOSE MODAL (overlay click) =====
-    modals.forEach(modal => {
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.classList.remove("active");
-        }
-      });
-    });
-  });
-  </script>
-
-
- <!--========== FILTER SCRIPT ==========-->
- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const items = document.querySelectorAll(".activities__item");
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        // 1) Remove "active-filter" from all buttons
-        filterButtons.forEach(b => b.classList.remove("active-filter"));
-        // 2) Add "active-filter" to the clicked button
-        btn.classList.add("active-filter");
-
-        // 3) Determine which items to show/hide
-        const filter = btn.getAttribute("data-filter");
-
-        items.forEach(item => {
-          // "all" means show everything
-          // otherwise show only items with matching class
-          if (filter === "all" || item.classList.contains(filter)) {
-            item.style.display = "block";
-          } else {
-            item.style.display = "none";
-          }
-        });
-      });
-    });
-  });
-</script>
-
+  <script src="js/main.js" defer></script>
 </body>
 </html>
