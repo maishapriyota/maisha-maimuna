@@ -9,6 +9,10 @@
   --header-bg: #ffffff;      /* Header background */
   --card-bg: #ffffff;        /* White for cards */
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --surface: #f9f9f9;
+  --muted: #666666;
+  --border: #dcdcdc;
+  --on-accent: #ffffff;
 }
 
 
@@ -30,6 +34,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 img {
@@ -54,12 +59,12 @@ img {
   display: block;
   text-align: center;
   margin-top: 0.5rem;
-  color: #777;
+  color: var(--muted);
 }
 .button {
   display: inline-block;
   background-color: var(--accent-color);
-  color: #fff;
+  color: var(--on-accent);
   padding: 0.8rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -126,8 +131,17 @@ img {
 
 /*=== Dark Mode ===*/
 body.dark-mode {
-  background: #292421;  /* or #2b2b2b, a dark grey */
-  color: #ffffff;          /* lighter text */
+  --bg-color: #292421;
+  --text-color: #f1ebe6;
+  --accent-color: #C9896A;
+  --header-bg: #322c28;
+  --card-bg: #37302c;
+  --surface: #37302c;
+  --muted: #c4b9b0;
+  --border: #4d4540;
+  --on-accent: #1d1816;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
 }
 
 /* Example: If you have a .profile__container img or #profileImg for your picture */
@@ -146,13 +160,13 @@ body.dark-mode .profile__container img {
 .dark-mode-toggle {
   background: transparent;
   border: none;
-  color: #333; /* default icon color */
+  color: var(--text-color); /* default icon color */
   font-size: 1.2rem;
   cursor: pointer;
   transition: color 0.3s;
 }
 .dark-mode-toggle:hover {
-  color: #A1674A; /* your accent color */
+  color: var(--accent-color); /* your accent color */
 }
 /* In dark mode, we might want the toggle button color to invert too */
 body.dark-mode .dark-mode-toggle {
@@ -218,7 +232,7 @@ body.dark-mode .dark-mode-toggle {
 }
 .home__description {
   font-size: 1rem;
-  color: #666;
+  color: var(--muted);
   max-width: 450px;
 }
 .home__img {
@@ -269,20 +283,10 @@ body.dark-mode .dark-mode-toggle {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
   display: block;
-}
-.profile__container::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 105%;
-  height: 105%;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
+  /* ring is the photo's own border, so there is no gap between them */
+  border: 4px solid var(--accent-color);
   border-radius: 46% 54% 33% 67% / 37% 34% 66% 63%;
-  border: 10px solid var(--accent-color);
   box-shadow: 0 0 10px var(--accent-color),
               0 0 20px rgba(226, 181, 136, 0.7),
               0 0 40px rgba(226, 181, 136, 0.5);
@@ -325,7 +329,7 @@ body.dark-mode .dark-mode-toggle {
 }
 /* Black-and-white by default, color on hover */
 .about__image img {
-  width: 600px;
+  width: 100%;
   border-radius: 8px; 
   box-shadow: 0 2px 10px var(--shadow-color);
   filter: grayscale(100%);
@@ -428,14 +432,14 @@ body.dark-mode .dark-mode-toggle {
   text-align: right;
 }
 .education__item:nth-child(odd) .education__rounder {
-  right: -10px; /* circle near center line */
+  right: -6.5px;
 }
 .education__item:nth-child(even) {
   align-self: flex-end;
   text-align: left;
 }
 .education__item:nth-child(even) .education__rounder {
-  left: -10px;
+  left: -6.5px;
 }
 
 /* Basic styling for the text inside the "card" */
@@ -448,12 +452,12 @@ body.dark-mode .dark-mode-toggle {
 .education__subtitle {
   display: block;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--muted);
   margin-bottom: 0.2rem;
 }
 .education__calendar {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--muted);
 }
 
 /*--------------------------------------------------------------
@@ -496,17 +500,17 @@ body.dark-mode .dark-mode-toggle {
 .experience__subtitle {
   display: block;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--muted);
   margin-bottom: 0.5rem;
 }
 .experience__calendar {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--muted);
   margin-bottom: 1rem;
 }
 /* Optional paragraph styling inside the card */
 .experience__card p {
-  color: #444;
+  color: var(--text-color);
   line-height: 1.4;
 }
 
@@ -541,12 +545,6 @@ body.dark-mode .dark-mode-toggle {
   gap: 2rem;
   margin-top: 3rem;
 }
-.skills__box {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 5px var(--shadow-color);
-}
 .skills__box h3 {
   margin-bottom: 1rem;
   font-size: 1.1rem;
@@ -562,8 +560,8 @@ body.dark-mode .dark-mode-toggle {
 }
 
 .skills__box {
-  background-color: #f9f9f9; /* default light background */
-  color: #333;              /* default text color */
+  background-color: var(--surface); /* default light background */
+  color: var(--text-color);              /* default text color */
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 5px var(--shadow-color);
@@ -571,8 +569,8 @@ body.dark-mode .dark-mode-toggle {
 }
 
 .skills__box:hover {
-  background-color: #A1674A; /* your deep brown accent color */
-  color: #fff;              /* switch text to white for contrast */
+  background-color: var(--accent-color); /* your deep brown accent color */
+  color: var(--on-accent);              /* switch text to white for contrast */
   transform: scale(1.05);   /* slight scale-up */
 }
 
@@ -586,7 +584,7 @@ body.dark-mode .dark-mode-toggle {
   gap: 2rem;
 }
 .portfolio__card {
-  background-color: #f9f9f9;
+  background-color: var(--surface);
   padding: 2rem;
   border-radius: 0.5rem;
   text-align: center;
@@ -597,14 +595,14 @@ body.dark-mode .dark-mode-toggle {
   color: var(--accent-color);
 }
 .portfolio__card p {
-  color: #666;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 
 .portfolio__details {
   display: inline-block;
   background-color: var(--accent-color);
-  color: #fff;
+  color: var(--on-accent);
   padding: 0.6rem 1.2rem;
   border-radius: 0.4rem;
   border: none;          /* Remove default button border */
@@ -650,7 +648,7 @@ body.dark-mode .dark-mode-toggle {
 /*===== Modal Content Box =====*/
 .modal__content {
   background: var(--card-bg, #fff);
-  width: 400px;               /* Adjust as needed */
+  width: min(400px, 92vw);
   border-radius: 0.5rem;
   padding: 2rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -666,7 +664,7 @@ body.dark-mode .dark-mode-toggle {
   right: 1rem;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #999;
+  color: var(--muted);
   transition: color 0.3s;
 }
 .modal__close:hover {
@@ -702,7 +700,7 @@ body.dark-mode .dark-mode-toggle {
   margin-top: 3rem;
 }
 .contact__info {
-  background-color: #f9f9f9;
+  background-color: var(--surface);
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 5px var(--shadow-color);
@@ -720,7 +718,7 @@ body.dark-mode .dark-mode-toggle {
 .contact__form textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   border-radius: 0.5rem;
   font-family: inherit;
 }
@@ -732,10 +730,10 @@ body.dark-mode .dark-mode-toggle {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  background-color: #f9f9f9;
+  background-color: var(--surface);
   padding: 2rem 0;
   margin-top: 3rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border);
 }
 .footer__container {
   display: flex;
@@ -767,7 +765,7 @@ body.dark-mode .dark-mode-toggle {
   color: var(--accent-color);
 }
 .footer__copy {
-  color: #999;
+  color: var(--muted);
   font-size: 0.8rem;
   margin-top: 0.5rem;
 }
@@ -801,7 +799,7 @@ body.dark-mode .dark-mode-toggle {
     position: absolute;
     top: 4rem;
     right: 1rem;
-    background: #fff;
+    background: var(--header-bg);
     padding: 1rem;
     flex-direction: column;
     gap: 1rem;
@@ -812,52 +810,8 @@ body.dark-mode .dark-mode-toggle {
     display: none;
   }
 
-  /* Timeline on mobile: single column, line on the left */
-  .qualification__content {
-    align-items: flex-start;
-  }
-  .qualification__content::before {
-    left: 10px;
-    transform: none;
-  }
-  .qualification__item {
-    width: 100%;
-    align-self: flex-start;
-    text-align: left;
-    margin-left: 2rem; /* Indent if you like */
-  }
-  .qualification__item:nth-child(odd),
-  .qualification__item:nth-child(even) {
-    align-self: flex-start;
-  }
-  .qualification__rounder {
-    left: 0;
-    right: auto;
-  }
 }
 
-
-/*===== Section Titles =====*/
-.section {
-  padding: 5rem 0 2rem;
-}
-.section__title {
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: center;
-  color: #A1674A; /* Warm brown accent color */
-}
-.section__subtitle {
-  display: block;
-  text-align: center;
-  margin-top: 0.5rem;
-  color: #777;
-}
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 /*===== Filter Buttons =====*/
 .activities__filters {
@@ -865,8 +819,8 @@ body.dark-mode .dark-mode-toggle {
   margin-top: 2rem;
 }
 .filter-btn {
-  background: #A1674A; /* same accent color */
-  color: #fff;
+  background: var(--accent-color); /* same accent color */
+  color: var(--on-accent);
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 0.4rem;
@@ -875,7 +829,7 @@ body.dark-mode .dark-mode-toggle {
   transition: background 0.3s, transform 0.3s;
 }
 .filter-btn:hover {
-  background: #E5C49A; /* lighter gold hover color */
+  background: var(--hover-color); /* lighter gold hover color */
   color: #000;
 }
 .active-filter {
@@ -891,7 +845,7 @@ body.dark-mode .dark-mode-toggle {
   gap: 1.5rem;
 }
 .activities__item {
-  background-color: #fff;
+  background-color: var(--card-bg);
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -904,11 +858,11 @@ body.dark-mode .dark-mode-toggle {
 .activities__item img {
   width: 100%;
   display: block;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
 }
 .activities__item h4 {
   margin: 1rem 0;
-  color: #A1674A;
+  color: var(--accent-color);
 }
 
 /* Optional: refine breakpoints for smaller screens */
@@ -930,3 +884,241 @@ body.dark-mode .dark-mode-toggle {
     width: 80%;     /* optional, so they don't stretch entire screen */
   }
 }
+
+
+/*--------------------------------------------------------------
+# Fixes & additions
+--------------------------------------------------------------*/
+:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+body.modal-open { overflow: hidden; }
+
+/* Nav */
+.nav__menu { margin-left: auto; margin-right: 1rem; }
+.nav__toggle { background: none; border: none; color: var(--text-color); font-size: 1.3rem; }
+
+/* Home social icons: stack below content when there's no room at the side */
+@media (max-width: 1100px) {
+  .home__social { position: static; transform: none; flex-direction: row; justify-content: center; grid-column: 1 / -1; }
+}
+
+/* About */
+.about__image { flex: 1 1 0; min-width: 0; max-width: 600px; }
+.about__image img { max-width: 100%; }
+
+/* Education timeline */
+.education__item:nth-child(odd) { padding-right: 2rem; }
+.education__item:nth-child(even) { padding-left: 2rem; }
+.education__grade { display: block; margin-top: 0.4rem; font-size: 0.85rem; font-weight: 500; color: var(--text-color); }
+
+/* Experience */
+.experience__subtitle a { color: var(--accent-color); text-decoration: none; }
+.experience__subtitle a:hover { text-decoration: underline; }
+
+/* Modal close is now a <button> */
+.modal__close { background: none; border: none; line-height: 1; padding: 0.25rem; }
+
+/* Contact */
+.contact__info a { color: inherit; text-decoration: none; }
+.contact__info a:hover { color: var(--accent-color); }
+.contact__info p i { width: 1.4rem; color: var(--accent-color); }
+.contact__form input, .contact__form textarea { background: var(--card-bg); color: var(--text-color); }
+.form__status { min-height: 1.5rem; font-size: 0.9rem; }
+.form__status.is-success { color: #2e7d32; }
+.form__status.is-error { color: #c62828; }
+body.dark-mode .form__status.is-success { color: #81c995; }
+body.dark-mode .form__status.is-error { color: #f28b82; }
+
+/* Touch devices have no hover, so show the About photo in color */
+@media (hover: none) { .about__image img { filter: none; } }
+
+@media (max-width: 768px) {
+  .nav__menu, .nav__menu.show-menu { margin: 0; }
+  .dark-mode-toggle { margin-left: auto; margin-right: 1rem; }
+  .about__image { flex: none; width: 100%; max-width: 100%; }
+  .education__content::before { left: 6px; }
+  .education__item,
+  .education__item:nth-child(odd),
+  .education__item:nth-child(even) {
+    width: calc(100% - 2rem);
+    margin-left: 2rem;
+    padding: 0;
+    align-self: flex-start;
+    text-align: left;
+  }
+  .education__item:nth-child(odd) .education__rounder,
+  .education__item:nth-child(even) .education__rounder { left: -31.5px; right: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+
+/*--------------------------------------------------------------
+# Graduation highlights
+--------------------------------------------------------------*/
+.scroll-progress { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent-color); transform: scaleX(0); transform-origin: left; z-index: 2000; }
+
+
+.education__item--featured .education__info { border: 1px solid var(--accent-color); box-shadow: 0 4px 18px var(--shadow-color); }
+.education__badge, .activities__ribbon { background: var(--accent-color); color: var(--on-accent); font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.7rem; border-radius: 999px; }
+.education__badge { position: absolute; top: -0.8rem; right: 1rem; }
+.education__grade--top { display: inline-block; background: var(--accent-color); color: var(--on-accent); padding: 0.25rem 0.75rem; border-radius: 999px; font-weight: 600; }
+.education__honors { list-style: none; margin-top: 0.8rem; display: grid; gap: 0.4rem; font-size: 0.88rem; }
+.education__honors i { width: 1.3rem; color: var(--accent-color); }
+
+.activities__mosaic { grid-auto-flow: dense; }
+.activities__media { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; background: linear-gradient(135deg, var(--accent-color), var(--hover-color)); }
+.activities__media::before { content: "\f19d"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 3rem; color: var(--on-accent); opacity: 0.85; }
+.activities__media img { position: absolute; inset: 0; height: 100%; object-fit: cover; border-bottom: 0; }
+.activities__item--featured { position: relative; border: 2px solid var(--accent-color); }
+.activities__item--featured p { padding: 0 1.2rem 1.2rem; font-size: 0.9rem; color: var(--muted); }
+.activities__ribbon { position: absolute; top: 0.8rem; left: 0.8rem; z-index: 1; }
+@media (min-width: 769px) {
+  .activities__item--featured { grid-column: span 2; }
+  .activities__item--featured .activities__media { aspect-ratio: 16 / 9; }
+}
+
+
+/*--------------------------------------------------------------
+# Experience: multi-role card
+--------------------------------------------------------------*/
+.experience__card--wide { grid-column: 1 / -1; }
+.experience__roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 2rem; margin-top: 1rem; }
+.experience__role { padding-left: 1rem; border-left: 3px solid var(--accent-color); }
+.experience__tag { display: inline-block; margin-left: 0.5rem; padding: 0.1rem 0.6rem; border-radius: 999px; background: var(--accent-color); color: var(--on-accent); font-size: 0.7rem; font-weight: 600; vertical-align: middle; }
+.experience__list { padding-left: 1.1rem; display: grid; gap: 0.5rem; font-size: 0.9rem; line-height: 1.4; }
+.experience__list li::marker { color: var(--accent-color); }
+.experience__impact { margin-top: 1rem; font-size: 0.9rem; }
+.experience__impact strong { color: var(--accent-color); }
+.experience__tools { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.experience__tools li { font-size: 0.75rem; padding: 0.15rem 0.6rem; border: 1px solid var(--border); border-radius: 999px; color: var(--muted); }
+
+
+/*--------------------------------------------------------------
+# Design pass: warm editorial type, softer surfaces
+--------------------------------------------------------------*/
+:root {
+  --font-display: "Poppins", sans-serif;
+  --radius: 1rem;
+  --shadow-color: rgba(84, 52, 30, 0.14); /* warm brown shadows instead of grey */
+}
+html { scrollbar-color: var(--accent-color) var(--bg-color); }
+::selection { background: var(--accent-color); color: var(--on-accent); }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Display type: the one bold move */
+.home__title, .section__title, .about__content h3,
+.experience__title, .education__title {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+.home__title { font-size: clamp(1.8rem, 3.2vw, 2.3rem); font-weight: 600; line-height: 1.15; max-width: 560px; }
+.section__title { font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 500; }
+.about__content h3 { font-size: clamp(1.25rem, 2.2vw, 1.55rem); font-weight: 600; line-height: 1.25; }
+.about__content p { max-width: 62ch; }
+.experience__title, .education__title { font-size: 1rem; font-weight: 600; }
+
+/* Frosted header */
+.header {
+  background-color: color-mix(in srgb, var(--header-bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* One page-load moment: the hero settles in (released afterwards so hovers still work) */
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.home__content > *, .home__img { animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.home__content > :nth-child(2) { animation-delay: 0.1s; }
+.home__content > :nth-child(3) { animation-delay: 0.2s; }
+.home__content > :nth-child(4) { animation-delay: 0.3s; }
+.home__content > :nth-child(5) { animation-delay: 0.4s; }
+.home__img { animation-delay: 0.25s; }
+.wave { animation: wave 1s ease-in-out 1s 3; } /* waves a few times, then rests */
+
+/* Buttons: pills with a soft glow */
+.button, .portfolio__details, .filter-btn { border-radius: 999px; }
+.button { padding: 0.85rem 1.8rem; box-shadow: 0 6px 16px -6px var(--accent-color); }
+.button:hover { box-shadow: 0 10px 22px -8px var(--accent-color); }
+
+/* One radius for all surfaces */
+.education__info, .experience__card, .skills__box, .portfolio__card,
+.activities__item, .contact__info, .modal__content { border-radius: var(--radius); }
+
+/* Timeline dots */
+.education__rounder { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-color) 25%, transparent); }
+
+
+/* Activity captions + valedictorian crop */
+.activities__item h4 { margin: 1rem 1rem 0.4rem; }
+.activities__item:not(.activities__item--featured) p { padding: 0 1rem 1.1rem; font-size: 0.85rem; line-height: 1.45; color: var(--muted); }
+.activities__media img { object-position: center 25%; } /* show the upper part of tall photos */
+
+/* About photo: always in color, with a quiet offset frame */
+.about__image { position: relative; isolation: isolate; }
+.about__image::before {
+  content: "";
+  position: absolute;
+  inset: 16px 16px -16px -16px;
+  border: 2px solid var(--accent-color);
+  border-radius: 1.25rem;
+  z-index: -1;
+}
+.about__image img,
+.about__image img:hover,
+.about__image img:active {
+  display: block;
+  border-radius: 1rem;
+  filter: none;
+  transform: none;
+  cursor: default;
+  box-shadow: 0 12px 28px -12px var(--shadow-color);
+}
+
+/* Hero portrait (the one with the brown ring): sit it lower on desktop */
+@media (min-width: 769px) {
+  .home__img { position: relative; top: 2.5rem; }
+}
+
+
+/*--------------------------------------------------------------
+# Projects as case studies
+--------------------------------------------------------------*/
+.portfolio__container { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.portfolio__card.case { display: flex; flex-direction: column; gap: 0.6rem; text-align: left; padding: 1.8rem; background: var(--card-bg); border: 1px solid var(--border); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.portfolio__card.case:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -14px var(--shadow-color); }
+.case__num { font-size: 2.4rem; font-weight: 300; line-height: 1; color: var(--accent-color); opacity: 0.55; }
+.case__tag { font-size: 0.78rem; color: var(--muted); }
+.portfolio__card.case h3 { margin: 0; font-size: 1.25rem; }
+.case__lead { color: var(--text-color); font-size: 0.95rem; }
+.case__facts { display: grid; gap: 0.6rem; margin: 0.3rem 0; }
+.case__facts dt { font-size: 0.75rem; font-weight: 600; color: var(--accent-color); }
+.case__facts dd { font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
+.portfolio__card.case .experience__tools { margin-top: 0.2rem; }
+.portfolio__card.case .portfolio__details { align-self: flex-start; margin-top: auto; }
+
+
+/* EcoGo screenshots */
+.case__cover { width: 100%; border-radius: 0.6rem; border: 1px solid var(--border); background: #fff; margin-bottom: 0.4rem; }
+.modal__content { max-height: 90vh; overflow-y: auto; }
+#modal-ecogo .modal__content { width: min(560px, 92vw); }
+#modal-ecogo .modal__image { width: 100%; border-radius: 0.6rem; margin-bottom: 0.8rem; }
+#modal-ecogo p { margin-top: 0.8rem; font-size: 0.9rem; line-height: 1.5; }
+
+
+/* Hero polish */
+.home__cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.button--ghost { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); box-shadow: none; padding: calc(0.85rem - 2px) calc(1.8rem - 2px); }
+.button--ghost:hover { background: var(--accent-color); color: var(--on-accent); box-shadow: none; }
+.about__container { margin-top: 2.5rem; }
+@media (max-width: 768px) {
+  .home__img { order: -1; } /* show the portrait first on phones */
+}
+
+
+/* Goal line + equal-height project covers */
+.home__open { display: inline-flex; align-items: center; gap: 0.6rem; align-self: flex-start; font-size: 0.85rem; color: var(--muted); padding: 0.45rem 0.9rem; border: 1px solid var(--border); border-radius: 999px; background: var(--card-bg); }
+.home__dot { flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: #4caf50; }
+.case__cover { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
